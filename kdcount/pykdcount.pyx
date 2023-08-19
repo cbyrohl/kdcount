@@ -27,7 +27,7 @@ cdef extern from "kdtree.h":
     ctypedef int (*kd_node_node_cullmetric)(void * userdata, int ndims, double * min, double * max,
             double * distmin, double * distmax) nogil
 
-    ctypedef void (*kd_force_func)(double r, double * dx, double * f, int ndims, void * userdata)
+    ctypedef void (*kd_force_func)(double r, double * dx, double * f, int ndims, void * userdata) except *
 
     struct cKDArray "KDArray":
         char * buffer
